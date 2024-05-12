@@ -43,11 +43,9 @@ arrow_left.addEventListener('click', () => {
 
 arrow_right.addEventListener('click', () => {
 	index++;
-	//console.log(index);
 	if(index === 4) {index=0};
 	tagLine.innerHTML = slides[index].tagLine;
 	bannerImg.src= slides[index].image;
-	//console.log(slides[index]);
 	updateBulletPoints();
 });
 
@@ -68,7 +66,7 @@ slides.forEach( () => {
 const bullets = bullet_points.querySelectorAll('.dot');
 
 function updateBulletPoints () {
-	//
+	//for each bullets (bullet) j'enlève le dot_selected avant de le replacer sur le span concerné (i=index)
     bullets.forEach((bullet, i) => {
 		bullet.classList.remove('dot_selected');
         if (i === index) {
@@ -77,5 +75,5 @@ function updateBulletPoints () {
     });
 };
 
-//je l'invoque aussi ici pour que index=0 soit selected au chargement de la page, pas uniquement au click
+//je l'invoque aussi ici pour que lorsque index=0 alors span i=0 soit dot_selected (au chargement de la page, pas uniquement au click)
 updateBulletPoints();
